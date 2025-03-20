@@ -1,31 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float physics();
-float chemistry();
-float maths();
+int physics();
+int chemistry();
+int maths();
 int main()
 {
+   printf("WELCOME TO CYBERGEEKS STUDENTS ASSESSMENT MANAGEMEN SYSTEM:\n\n");
    int p = physics();
    int c = chemistry();
    int m = maths();
-   float combination = (p + c + m)/3;
-   printf("Your average score for combination PCM is %.2f:\n",combination);
-   if (combination <49){
-    printf("RETAKE THE COURESE\n")
-   };
-   else if combination >=49 && combination <= 70){
-    printf("PASS\n")
-   };
-   else{
-    printf("A HIGH PASS, CONGRATULATIONS YOU HAVE BEEN PROMOTED\n")
-   }
+   int total = (p + c + m);
+   float avg = total/3;
+   printf("Your final score for combination PCM is: %.2f",avg);
 
 
     return 0;
 }
 //physics
-float physics(){
+int physics(){
 int asgnmt,coursework,mid_term,final_exams,total;
 float average;
 printf("Enter your physics assignments score:\n");
@@ -39,12 +32,11 @@ scanf("%d",&final_exams);
 
 total = (asgnmt + coursework + mid_term + final_exams );
 average = (total/4);
-
 printf("You scored %.2f in Physics:\n",average);
 return average;
 }
 //chemistry
-float chemistry(){
+int chemistry(){
 int asgnmt,coursework,mid_term,final_exams,total;
 float average;
 printf("Enter your Chemistry assignments score:\n");
@@ -63,7 +55,7 @@ printf("You scored %.2f in Chemistry:\n",average);
 return average;
 }
 
-float maths(){
+int maths(){
 int asgnmt,coursework,mid_term,final_exams,total;
 float average;
 printf("Enter your Maths assignments score:\n");
